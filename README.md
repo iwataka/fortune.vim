@@ -11,3 +11,9 @@ This provides the same functionality as Unix's fortune command.
 + fortune#fortune()
 
     Returns the random quoatation selected from the database.
+
+## Credit
+
+Thanks to the below programs:
+
++ [bmc/fortunes](https://github.com/bmc/fortunes) provided under the Creative Commons Attribution 4.0 International License.
