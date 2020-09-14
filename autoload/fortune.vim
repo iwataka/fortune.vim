@@ -1,9 +1,7 @@
 scriptencoding utf-8
 
-if &compatible || (exists('g:loaded_fortune') && g:loaded_fortune)
-  finish
-endif
-let g:loaded_fortune = 1
+let s:save_cpo = &cpoptions
+set cpoptions&vim
 
 let s:fortune_file = expand(expand('<sfile>:p:h:h').'/data/fortunes')
 let s:fortune_url = 'https://raw.githubusercontent.com/bmc/fortunes/master/fortunes'
@@ -48,3 +46,6 @@ endfu
 fu! s:random(n)
   return float2nr(fmod(localtime(), a:n))
 endfu
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
